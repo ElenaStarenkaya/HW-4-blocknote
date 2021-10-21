@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var x, y, str = " ", note = " ";
+        var actionNumber;
+
+
+        blockNote: do {
+            actionNumber = +prompt("Введите номер команды:\n\n1. Сложить два числа;\n2. Возвести число в квадрат;\n3. Добавить запись в блокнот;\n4. Посмотреть блокнот;\n5. Очистить блокнот;\n6. Завершить программу.");
+            switch (actionNumber) {
+                case (1):
+                    x = +prompt("Сложение двух чисел.\n\nВведите первое число:");
+                    y = +prompt("Сложение двух чисел.\n\nВведите второе число:");
+                    alert("Сумма введенных чисел:  " + (x + y));
+                    break;
+                case (2):
+                    x = +prompt("Возведение числа в квадрат.\n\nВведите число:");
+                    alert("Квадрат введенного числа равен:  " + x ** 2);
+                    break;
+                case (3):
+                    while (confirm("Хотите сделать новую запись?")) {
+                        note = prompt("Добавление записи в блокнот.\n\nВведите новую запись:");
+                        str += note + "\n";
+                    }
+                    break;
+                case (4):
+                    alert("Просмотр блокнота.\n\n" + str);
+                    break;
+                case (5):
+                    if (confirm("Очистить блокнот от записей?")) {
+                        if (confirm("Вы уверены, что хотите очистить блокнот?")) {
+                            str = "";
+                            alert("У вас нет записей.");
+                        }
+                        else break;
+                    }
+                    else break;
+                    break;
+                case (6):
+                    if (confirm("Завершить программу?")) {
+                        if (confirm("Вы уверены, что хотите завершить программу?")) {
+                            alert("До новых встреч!");
+                        }
+                        else break;
+                    }
+                    else break;
+                break blockNote;
+                default: alert("Error");
+            }
+        }
+        while (confirm("Хотите выбрать другое действие?"));
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
